@@ -1,0 +1,12 @@
+.login{
+    width: 400px;
+    position: relative;
+    margin: 50px auto;
+}
+
+input{
+    font-size: large;
+}
+label{
+    font-size: large;
+}
