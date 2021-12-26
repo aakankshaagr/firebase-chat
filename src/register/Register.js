@@ -2,10 +2,11 @@ import React, { useState } from "react";
 import Layout from "../members/Layout";
 import Card from "../members/Card";
 import "./register.css";
-import { setDoc, doc, Timestamp } from "firebase/firestore";
+import { doc, setDoc, Timestamp } from "firebase/firestore";
+//import { setDoc, doc, Timestamp } from "firebase/firestore";
 import { auth, db } from "../firebase";
 import { createUserWithEmailAndPassword } from "firebase/auth";
-
+import { useNavigate } from "react-router-dom";
 function Register() {
   const [isValidName, setIsValidName] = useState(true);
   const [isValidEmail, setIsValidEmail] = useState(true);
@@ -14,7 +15,7 @@ function Register() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
-
+  const navigate = useNavigate();
   const validateName = (e) => {
     if (e.target.value.trim() === "") {
       setIsValidName(false);
@@ -45,11 +46,23 @@ function Register() {
         email,
         password
       );
-      await setDoc(doc(db, "users", result.user, uid), {
+      console.log(result.user);
+      await setDoc(doc(db, "users", result.user.uid), {
         uid: result.user.uid,
+        fname,
+        email,
+        password,
         createdAt: Timestamp.fromDate(new Date()),
         isOnline: true,
+      }).catch((e) => {
+        console.log(e);
       });
+      console.log("done");
+      setName("");
+      setPassword("");
+      setEmail("");
+      setLoading(false);
+      navigate("/");
     } catch (e) {
       console.log(e);
     }
@@ -121,7 +134,12 @@ function Register() {
               )}
             </div>
 
-            <button id="signup" type="submit" class="btn btn-primary">
+            <button
+              id="signup"
+              type="submit"
+              class="btn btn-primary"
+              disabled={loading}
+            >
               Sign Up
             </button>
           </form>

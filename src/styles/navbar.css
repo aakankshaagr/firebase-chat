@@ -33,11 +33,11 @@
     margin: 0 10px;
 }
 
-.right> li > a{
+.right> li > a,btn{
     color: #fff;
 }
 
-.right > li > a.active{
+.right > li > a.active , btn:active{
     font-weight: bold;
 }
 .username{
