@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+/*import React, { useState, useEffect } from "react";
 import firebase from "firebase/compat/app";
 const Channel = ({ user = null, db = null }) => {
   const [messages, setMessages] = useState([]);
@@ -12,3 +12,4 @@ const Channel = ({ user = null, db = null }) => {
   return null;
 };
 export default Channel;
+*/

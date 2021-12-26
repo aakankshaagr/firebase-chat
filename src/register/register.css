@@ -1,0 +1,77 @@
+.register{
+    width: 600px;
+    position: relative;
+    margin: 50px auto;
+}
+
+
+h3{
+    text-align: center;
+    padding-top:10px;
+    
+   font-size: large;
+    font-family: cursive;
+    font-weight: 600;
+    font-size: 30px;
+}
+#signup{
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+    padding: 5px 10px;
+   font-size: large;
+    font-family: cursive;
+    font-weight: 600;
+}
+form {
+  margin-top: 30px;
+  padding: 0px 20px;
+}
+.form-group{
+  margin-top: 20px;
+}
+label{
+    font-size: 24px;
+}
+ input {
+  width: 100%;
+  padding: 10px;
+  outline: none;
+  margin-top: 10px;
+  border: 1px solid var(--color-6);
+  border-radius: 5px;
+  font-size: 22px;
+}
+.btn {
+  margin: 10px 0px;
+  text-align: center;
+}
+.btn {
+  padding: 10px;
+  border-radius: 5px;
+  outline: none;
+  border: 1px solid var(--color-4);
+  
+  cursor: pointer;
+  transition: 0.3s ease-in-out all;
+  font-size: 26px;
+}
+.btn:hover {
+  transform: scale(1.05);
+}
+
+.error {
+    color: red;
+}
+
+.error-message {
+    color: #FF6565;
+    padding: .5em .2em;
+    height: 1em;
+    position: absolute;
+    font-size: .8em;
+}
+#email{
+    font-size: 18px;
+    color:grey;
+}
